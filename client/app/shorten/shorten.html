@@ -4,6 +4,15 @@
 	  <input type='text'ng-model='link.url'>
 	  <button>Shorten</button>
 	</form>
+   <div class="link" ng-show="link.returnedLink">
+      <img src='assets/redirect_icon.png'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.returnedLink.visits}}</span>Visits</div>
+        <div class='title'>{{link.returnedLink.title}}</div>
+        <div class='original'>{{link.returnedLink.url}}</div>
+        <a href='{{base_url}}/{{code}}'>{{link.returnedLink.base_url}}/{{link.returnedLink.code}}</a>
+      </div>
+  </div>
 </div>
 
 
