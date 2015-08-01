@@ -1,5 +1,13 @@
 <div id='container'>
 <!-- Your code here -->
+<div class="navigation">
+  <ul>
+    <li><a href="#/links" class="index">All Links</a></li>
+    <li><a href="#/shorten" class="create">Shorten</a></li>
+    <li><a href="#/signin" class="logout" ng-click="Auth.signout()">Logout</a></li>
+  </ul>
+  
+  </div>
 	<form name="shortenForm" ng-submit='addLink()'>
 	  <input type='text'ng-model='link.url'>
 	  <button>Shorten</button>
@@ -10,7 +18,7 @@
         <div class='visits'><span class='count'>{{link.returnedLink.visits}}</span>Visits</div>
         <div class='title'>{{link.returnedLink.title}}</div>
         <div class='original'>{{link.returnedLink.url}}</div>
-        <a href='{{base_url}}/{{code}}'>{{link.returnedLink.base_url}}/{{link.returnedLink.code}}</a>
+        <a href='{{link.returnedLink.base_url}}/api/links/{{link.returnedLink.code}}'>{{link.returnedLink.base_url}}/{{link.returnedLink.code}}</a>
       </div>
   </div>
 </div>
