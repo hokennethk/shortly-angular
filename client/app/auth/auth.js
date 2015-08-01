@@ -27,4 +27,9 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+
+  $scope.submitForm = function(isValid) {
+    $scope.submitted = true;
+    return isValid;
+  };
 });
